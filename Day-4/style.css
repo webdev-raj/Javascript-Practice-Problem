@@ -1,0 +1,42 @@
+@font-face {
+    font-family: gil;
+    src: url("./Gilroy-Regular.ttf");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    color: white;
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+}
+.center{
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center h1{
+    font-family: gil;
+    text-align: center;
+    font-size: 2.9rem;
+    line-height: 3.5rem;
+}
+
+.center h1 span{
+    color: #1e1e1e;
+}

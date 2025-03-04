@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #111;
+            color: white;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <p>Change it</p>
+    <button class="btn">
+        Click me
+    </button>
+    <script>
+        const btn = document.querySelector('.btn');
+        const p = document.querySelector("p")
+        btn.addEventListener("click",()=>{
+            p.textContent = prompt("enter an text for change an para element")
+        })
+    </script>
+</body>
+</html>

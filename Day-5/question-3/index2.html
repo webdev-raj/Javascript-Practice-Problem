@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="inp1">
+        <input type="text" id="inp2">
+        <input type="submit" value="Submit Form">
+        <p></p>
+    </form>
+
+    <script>
+        var inps = document.querySelectorAll('input[type=text]');
+        var form=document.querySelector("form");
+        var p = document.querySelector("p")
+        form.addEventListener("submit",(events)=>{
+            events.preventDefault();
+            for(let i=0;i<inps.length;i++){
+                if(inps[i].value.trim()===""){
+                    p.textContent = "Error! some field are blanked"
+                    p.style.color="red"
+                    break;
+                }
+                else{
+                     p.textContent = ""
+                }
+            }
+
+                // if (val.value === '') {
+                //     p.textContent = "Error! some field are blanked"
+                //     p.style.color="red"
+                // }
+                // else{
+                //     val.value =""
+                //     val.value =""
+                //     p.textContent = ""
+                // }
+        })
+    </script>
+</body>
+</html>

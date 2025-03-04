@@ -1,0 +1,1 @@
+ek reatangle banao and jab mouse center per ho ractangle bhi center per ho or jbhi mouse left jaana shuru ho ractangle bhi left jaana shuru hojaaye, per jaise jaise mouse left jaaye rectangle ki speed left main jaate jaate slow ho jaaye or same happend with right side
