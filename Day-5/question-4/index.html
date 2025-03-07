@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+
+    </ol>
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+
+    <script>
+        var ol = document.querySelector("ol");
+        var addBtn = document.querySelector("#add")
+        var removeBtn = document.querySelector("#remove")
+        var flag = 0
+        addBtn.addEventListener("click", () => {
+            let li = document.createElement("li")
+            let liString = prompt("enter Quary")
+            li.textContent = liString
+            ol.appendChild(li)
+            flag++
+            console.log(flag)
+        })
+        removeBtn.addEventListener("click", () => {
+            let newli = ol.querySelectorAll("li")
+            newli[flag - 1].remove()
+        })
+    </script>
+</body>
+
+</html>
