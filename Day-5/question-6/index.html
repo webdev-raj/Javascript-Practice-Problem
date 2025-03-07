@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="tabsContainer">
+        <div class="tab" id="home">Home</div>
+        <div class="tab" id="about">About</div>
+        <div class="tab" id="contact">Contact</div>
+    </div>
+    <div class="contentContainer">
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum eum quos laudantium, ullam voluptatem neque dicta facilis dolore. Aut, vel nesciunt. Harum, saepe asperiores eaque sapiente ratione sint tempora quaerat obcaecati nesciunt cumque esse eveniet provident earum quasi praesentium maxime culpa quo dolores, ea fugit maiores quae. Totam quidem expedita modi odio voluptates quam? Nesciunt, itaque cupiditate quis eos non saepe. Sapiente eius aut temporibus? Nostrum, debitis repudiandae fugiat, possimus error quidem dolores veritatis pariatur facilis quisquam qui nesciunt eaque expedita quos eum animi perspiciatis quod totam velit! Culpa maiores sit recusandae id neque voluptatum hic deleniti. Voluptates temporibus eveniet sit architecto dicta, nemo optio aperiam porro libero quo dignissimos reiciendis ipsa repudiandae nisi pariatur perspiciatis modi totam ullam aliquam, sunt itaque omnis, minima voluptatem? Harum facere labore molestias enim neque ipsam adipisci nulla architecto officia voluptatem soluta libero sint ab quidem atque unde excepturi eum cum voluptate cumque, nam porro aspernatur voluptas! Similique tenetur totam vitae explicabo consectetur commodi, dolor perferendis illum dolore dolorem esse harum, nulla laboriosam quam quod odit! Incidunt nesciunt autem nam? Hic ullam pariatur ipsa, nostrum, sequi commodi, minus eligendi laboriosam eos architecto dolorum accusantium perspiciatis cupiditate officiis ducimus officia veritatis beatae recusandae voluptatum delectus.</h3>
+        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem eum ratione enim perferendis distinctio hic doloremque quas sunt modi illum, beatae esse molestias soluta officia consectetur labore odio nobis expedita. Voluptatum optio assumenda sequi suscipit minus placeat neque alias pariatur fuga reprehenderit nulla, quos enim saepe nisi maxime sapiente temporibus possimus. Error odit perferendis culpa minus tenetur laboriosam inventore asperiores ex eos dolor, porro voluptate similique non. Laudantium nam consequuntur doloribus eius odit. Nam, quaerat explicabo. Corporis provident tempora iste rem voluptatibus saepe ea aspernatur, iure ex eum magni temporibus atque eveniet numquam? Voluptatum cum praesentium fuga blanditiis reiciendis ab pariatur libero! Nam, nobis explicabo? Repellat voluptas mollitia illum dolor similique ipsa, cum minima sapiente. Labore natus consequuntur fugit iure temporibus molestiae! Quam maxime quas delectus minus non libero placeat corrupti ullam? Dicta exercitationem laborum dolores nobis ad cumque aspernatur possimus esse saepe rem illum dolorem corporis, porro quasi voluptatum.</h3>
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque libero aliquam rerum magni a accusantium obcaecati voluptatem minus perspiciatis repellendus explicabo corporis tempora nostrum harum omnis voluptas quaerat suscipit sit, iusto fugiat laborum. Voluptas ab saepe quo eos cumque optio assumenda repudiandae, quisquam culpa voluptate dolore officiis nam eveniet autem sunt expedita? Beatae facilis tenetur blanditiis quaerat atque iusto corrupti sunt dolores quos sed nostrum reprehenderit eligendi autem dolor eaque illo, laboriosam assumenda, dolorem accusantium numquam deleniti amet eveniet. Aliquid animi repudiandae tempora voluptatibus numquam harum voluptates assumenda, ullam beatae facere officiis error, incidunt debitis nobis eum? Illo labore nostrum explicabo, ratione consequuntur tempora eos in tempore a placeat iure officia sunt accusantium fuga, unde, illum provident recusandae! Reprehenderit sequi minus magni velit, voluptates laborum, corrupti mollitia pariatur expedita dolor sunt optio possimus rerum at. Quidem, est ducimus blanditiis velit assumenda, vitae ullam saepe, distinctio molestiae dignissimos odit. Culpa fuga quisquam, ea atque quam maiores veritatis corporis sed assumenda saepe! Veniam unde consequuntur quia, autem delectus consequatur cum quaerat, et consectetur optio aperiam doloribus quas neque, voluptatibus harum nostrum! Consequuntur odit rerum soluta voluptas nulla, excepturi dolore est alias culpa, laborum id eaque aliquid reprehenderit quod! Temporibus impedit dicta error, corporis blanditiis quis, voluptates reiciendis, consectetur ab asperiores ea molestiae ratione voluptatibus nesciunt esse repellat adipisci accusamus dolores. Unde maxime odit odio nemo laboriosam nulla dolore reiciendis voluptatem placeat voluptate rerum quo illum, ea impedit atque in expedita accusamus pariatur, saepe vitae neque quisquam enim. At similique illum minima.</h3>
+    </div>
+
+    <script>
+        const tab=document.querySelectorAll(".tab")
+        const texts = document.querySelectorAll("h3")
+        texts[0].style.display="block"
+        tab.forEach((data,idx)=>{
+            data.addEventListener("click",()=>{
+                clearText()
+                texts[idx].style.display = "block";
+            })
+        })
+        const clearText = ()=>{
+            texts.forEach((h3)=>{
+                h3.style.display = "none"
+            })
+        }
+    </script>
+</body>
+</html>
