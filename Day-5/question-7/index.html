@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="center">
+        <h4></h4>
+        <div id="progessContainer">
+            <div id="progess">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const progess = document.querySelector("#progess")
+        const h4 = document.querySelector("h4")
+        let counter = 0
+        let init
+        init = setInterval(() => {
+            progess.style.width = `${counter}%`
+            counter++
+            if (counter == 100) {
+                h4.textContent = "Download Completed"
+                clearInterval(init)
+            }
+        }, 50)
+    </script>
+</body>
+
+</html>
