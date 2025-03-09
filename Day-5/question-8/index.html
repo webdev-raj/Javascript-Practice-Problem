@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta artist="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Artist Search Filter</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="input">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="persons">
+            </div>
+        </div>
+    </div>
+    <script>
+        const persons = document.querySelector(".persons")
+        const inp = document.querySelector("input[type=text]")
+        const userData = [{
+            artist: "Xxxtention",
+            imageUrl: "https://imgs.search.brave.com/vv0mJ_OeOMdCNmskOdVYuoTfmwbzz0p_UbcdufJNQeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2JiL1hYWFRlbnRh/Y2lvbi1NdWdzaG90/RGVjMjAxNy5qcGc"
+        },
+        {
+            artist: "Lil Uzi Vert",
+            imageUrl: "https://imgs.search.brave.com/WBhBPMqXi3rRsvXybJ0C4joMWnvqglXXArLGw5IgT48/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMz/Njk2NDUzNC9waG90/by9uZXcteW9yay1u/ZXcteW9yay1saWwt/dXppLXZlcnQtYXR0/ZW5kcy1qYXktenMt/NDAtNDAtY2x1Yi0x/OHRoLWFubml2ZXJz/YXJ5LWF0LTQwLTQw/LWNsdWItb24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPXBx/cjl0N3dEU3h5ZHZ0/amJmUDZVcWIzR2lK/M1pzcmN0aW9ZNVF1/YU50ODg9"
+        }, {
+            artist: "Drake",
+            imageUrl: "https://imgs.search.brave.com/bMI51YwEVzj_xV0AnmjVeNbuP6L3cB6TmaMvFc8cSOM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNDc3/OTY3NDEwL3Bob3Rv/L2F0bGFudGEtZ2Et/ZHJha2UtcGVyZm9y/bXMtb25zdGFnZS1h/dC1ob3QtMTA3LTkt/YmlydGhkYXktYmFz/aC1ibG9jay1zaG93/LWF0LXBoaWxsaXBz/LWFyZW5hLW9uLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1i/ZnB5M080ZzhyakU3/OGVfaW92ek11ekQ5/ZlBIdHhVd0VTODBn/MHlLVE5zPQ"
+        }, {
+            artist: "YNW Melly",
+            imageUrl: "https://imgs.search.brave.com/uo39W-qRWQu8e6jKOEJe3t6oNJ28NfoIm3ZWSuAnaJg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTU3/NjA5MjU2OS9waG90/by9qYW1lbGwtZGVt/b25zLWJldHRlci1r/bm93bi1hcy1yYXBw/ZXIteW53LW1lbGx5/LWlzLXNob3duLWF0/LXRoZS1kZWZlbnNl/LXRhYmxlLWJlZm9y/ZS1jbG9zaW5nLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1Y/WDVLdXQ1N015SG9X/Y1NqMHgyMnVkX1B2/djJDZzFuUXU5d1Y4/ellnWEJRPQ"
+        }, {
+            artist: "Juice Wrld",
+            imageUrl: "https://images.unsplash.com/photo-1584985748032-19b29ac93b94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8anVpY2UlMjB3cmxkfGVufDB8fDB8fHww"
+        }, {
+            artist: "Lil Tecca",
+            imageUrl: "https://imgs.search.brave.com/g70mdMfAC2lUyTivIBhAIn2gmfmHfTtVw4Rn8xL5pz8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDQ0NTgz/OTYuanBn"
+        }, {
+            artist: "Doja Cat",
+            imageUrl: "https://imgs.search.brave.com/wj-gR4a9CgqGf9Ks-6iMqgB4Oq0GN8tmeW-amcME5R0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hbGx1cmUuY29t/L3Bob3Rvcy82MmVh/OGM0NGU5ZGQwZTll/ZGFhY2E4NmYvMTox/L3dfMzU0LGNfbGlt/aXQvZG9qYSUyMGNh/dCUyMDNkJTIwbWFu/aWN1cmUuanBn"
+        }, {
+            artist: "Travis Scott",
+            imageUrl: "https://imgs.search.brave.com/TfRxsGSD9hIH5nDvgNSsYHbII2kmo03I4_UB13ZbbHA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjMz/ODY3NzcwL3Bob3Rv/L2hvdXN0b24tdHgt/cmFwcGVyLXRyYXZp/cy1zY290dC1wZXJm/b3Jtcy1vbnN0YWdl/LWF0LXRoZS1tYXhp/bS1zdXBlci1ib3ds/LXBhcnR5LW9uLWZl/YnJ1YXJ5LTUuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPVJy/cmxfVEUwaHpnWlV2/aTBJNktTZm41VUlT/a01uelJkSFNhY0pZ/NU0zN2c9"
+        }, {
+            artist: "Central Cee",
+            imageUrl: "https://imgs.search.brave.com/k9q7oaGPSDc7e1ZRn9NNiUnkjhNDqgJozOdrMkfb8C4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5waXRjaGZvcmsu/Y29tL3Bob3Rvcy82/NzhmZmJiYzQ2YzA4/YmI5ZGUxOTY1Yjcv/bWFzdGVyL3dfMTI4/MCxjX2xpbWl0L0Nl/bnRyYWwtQ2VlLmpw/ZWc"
+        }]
+        let clutter = ""
+        userData.forEach((elem) => {
+            clutter += `<div class="person">
+                    <div class="imgContainer">
+                        <img src="${elem.imageUrl}"
+                            alt="img1">
+                    </div>
+                    <h2>${elem.artist}</h2>
+                </div>`
+        })
+        persons.innerHTML = clutter
+
+        inp.addEventListener("input", () => {
+            const searchedElem = userData.filter((elem) => {
+                return elem.artist.toLowerCase().startsWith(inp.value.toLowerCase())
+            })
+            let newUser = ""
+            searchedElem.forEach((elem) => {
+                newUser += `<div class="person">
+                    <div class="imgContainer">
+                        <img src="${elem.imageUrl}"
+                            alt="img1">
+                    </div>
+                    <h2>${elem.artist}</h2>
+                </div>`
+            })
+            persons.innerHTML = newUser
+        })
+    </script>
+</body>
+
+</html>
