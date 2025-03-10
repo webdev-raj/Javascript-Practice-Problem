@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("./Gilroy-Regular.ttf");
+        }
+        *{
+            font-family: gil;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-color: #111;
+            color: white;
+            padding: 10px;
+        }
+        textarea{
+            background-color: transparent;
+            color: #dadada;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 2px solid rgb(177, 177, 255);
+            padding: 10px;
+            outline: none;
+            font-weight: bold;
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Character Count: <span class="counter">0</span></h2>
+    <textarea name="textarea" id="textArea" cols="40" rows="8"></textarea>
+    <script>
+        const textArea=document.querySelector("textarea")
+        const counter = document.querySelector(".counter")
+        textArea.addEventListener("input",()=>{
+            counter.textContent = textArea.value.length
+        })
+    </script>
+</body>
+</html>
