@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="bg"></div>
+        <div class="textContainer">
+            <h1 class="heading">#000000</h1>
+            <div class="btnContainer">
+                <button class="newColor">New Color</button>
+                <button class="copyColor">Copy Color</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bg = document.querySelector('.bg');
+        const text = document.querySelector('.heading');
+        console.log(text.textContent)
+        const newColor = document.querySelector('.newColor');
+        const copyColor = document.querySelector('.copyColor');
+        const randText = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+        let clutter = ""
+        newColor.addEventListener("click", () => {
+            for (let i = 0; i < 6; i++) {
+                clutter += randText[Math.floor(Math.random() * randText.length)]
+            }
+            changeBgColorWithText(clutter)
+            clutter = ""
+        })
+        const changeBgColorWithText = (color) => {
+            console.log(color)
+            text.textContent = `#${color}`
+            bg.style.backgroundColor = `#${color}`
+        }
+    </script>
+</body>
+
+</html>
