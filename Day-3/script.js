@@ -41,5 +41,6 @@ rect.addEventListener(
     setTimeout(()=>{
       div.remove();
     },2000)
+    console.log("hello")
   }, 400)
 );
