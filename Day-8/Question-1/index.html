@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            background-color: #111;
+            color: white;
+        }
+        .changeBg{
+            height: 100vh;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="changeBg">
+        <h1>get Infinite Bg Intill you click on stop</h1>
+        <button id="start">Start BG</button>
+        <button id="stop">Stop Bg</button>
+    </div>
+
+    <script>
+        const hexCode = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+        const chnageBG = document.querySelector(".changeBg");
+        const startBtn = document.querySelector("#start")
+        const stopBtn = document.querySelector("#stop")
+        let clearinit
+        startBtn.addEventListener("click",()=>{
+            if(!clearinit){
+                clearinit=setInterval(()=>{
+                    let hex = ""
+                    for(let i = 0;i<6;i++){
+                        hex+=hexCode[Math.floor(Math.random()*hexCode.length)]
+                    }
+                    chnageBG.style.backgroundColor = `#${hex}`
+                },1000)
+                console.log("done")
+            }
+        })
+        stopBtn.addEventListener("click",()=>{
+            clearInterval(clearinit)
+            clearinit = null;
+        })
+
+    </script>
+</body>
+</html>

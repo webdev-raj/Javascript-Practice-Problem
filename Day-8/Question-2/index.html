@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-align: center;
+        }
+
+        html,
+        body {
+            background-color: #111;
+            color: white;
+            padding-top: 50px;
+        }
+
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            border: 1px solid rgb(229, 229, 229);
+        }
+        
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Get Key Tract from Keyboard</h1>
+    <div class="inner">
+        <p>Press any key on your keyboard to see its corresponding key code.</p>
+    </div>
+
+    <script>
+        window.addEventListener("keypress", (event) => {
+            document.querySelector(".inner").innerHTML =
+                `<table style="width:100%">
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${event.key}</td>
+    <td>${event.keyCode}</td>
+    <td>${event.code}</td>
+  </tr>
+</table>`;
+        });
+    </script>
+</body>
+
+</html>

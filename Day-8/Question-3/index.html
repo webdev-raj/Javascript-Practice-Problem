@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Github Profile Card</title>
+</head>
+
+<body>
+    <div class="main py-40 px-80 min-h-screen w-full bg-zinc-900 text-white font-[gilroy] tracking-tight font-semibold">
+        <div class="search_Field">
+            <form class="flex gap-3">
+                <input placeholder="Enter your GitHub username"
+                    class="placeholder:text-zinc-600 w-full bg-transparent border border-zinc-600 px-4 py-2 text-lg rounded-lg outline-blue-200"
+                    type="text">
+                <div class="flex gap-2">
+
+                    <button
+                        class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-4 rounded-lg border border-zinc-600 "><span><i
+                                class="ri-search-line text-2xl"></i></span></button>
+                    <button
+                        class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-4 rounded-lg border border-zinc-600 text-lg"><span><i
+                                class="ri-close-line text-2xl"></i></span></button>
+                </div>
+            </form>
+        </div>
+        <div class="w-full p-3 mt-10">
+            <div class="card w-full gap-2 flex overflow-hidden">
+                <div class="bg-zinc-950 w-72 p-3 rounded-xl border-2 border-zinc-600">
+                    <div id="img_Container" class="h-60 bg-zinc-700 rounded-lg overflow-hidden">
+                        <img class="h-full w-full object-center"
+                            src="https://avatars.githubusercontent.com/u/107756643?v=4" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <h1 class="text-2xl mt-3">Webdev-raj</h1>
+                        <p class="my-2 leading-tight text-zinc-300">For a better tomorrow........</p>
+                        <button
+                            class="w-full bg-zinc-800 border border-zinc-600 hover:bg-zinc-700 text-lg rounded-xl py-2 mt-4">Visit
+                            Profile</button>
+                    </div>
+                </div>
+                <div class="bg-zinc-950 w-2/3 p-3 rounded-xl border-2 border-zinc-600">
+                    <div id="statsContainer" class="w-full flex flex-col gap-3">
+                        <img class="w-full rounded-lg"
+                            src="https://camo.githubusercontent.com/96e041e499ab1d121b3dc1c7fa86abe77ef329fef766a29cf64799d5edc6ff97/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d616e7572616768617a72612673686f775f69636f6e733d7472756526686964653d636f6e74726962732c7072732663616368655f7365636f6e64733d3836343030267468656d653d6461726b"
+                            alt="">
+                        <img class="w-full rounded-lg"
+                            src="https://github-readme-streak-stats.herokuapp.com/?user=webdev-raj&theme=nightowl&hide_border=true"
+                            alt="">
+                        <img class="w-full rounded-lg"
+                            src="https://camo.githubusercontent.com/b265e62d64a5711aba0d94eeb46d75a620c58b1112a921ec5224bf18400a54ee/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d7765626465762d72616a2673686f775f69636f6e733d74727565266c6f63616c653d656e"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
