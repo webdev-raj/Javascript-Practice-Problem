@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: gilroy;
+        src: url("./Gilroy-Regular.ttf");
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
-</head>
-<body>
-    <div class="main">
-        <div class="calculator">
-            
+  </head>
+
+  <body>
+    <div
+      class="main h-screen w-full bg-zinc-900 text-white flex items-center justify-center font-[gilroy] font-semibold"
+    >
+      <div
+        class="calculator w-1/2 border-2 border-zinc-600 px-6 py-7 rounded-3xl"
+      >
+        <input id="inpBox"
+          type="text"
+          name="textField"
+          placeholder="Enter Number by Numpad"
+          class="w-full outline-none border text-5xl rounded-2xl px-5 py-5 border-zinc-500 placeholder:text-zinc-600"
+        />
+        <div class="buttonContainer">
+          <div class="w-full flex items-center justify-evenly gap-4 mt-7">
+            <button id="add"
+              class="border-2 border-zinc-600 py-5 w-1/4 text-6xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer"
+            >
+              <i class="ri-add-line"></i>
+            </button>
+            <button id="minus"
+              class="border-2 border-zinc-600 py-5 w-1/4 text-6xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer"
+            >
+              <i class="ri-subtract-line"></i>
+            </button>
+            <button id="multiply"
+              class="border-2 border-zinc-600 py-5 w-1/4 text-6xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer"
+            >
+              <i class="ri-close-fill"></i>
+            </button>
+            <button id="divide"
+              class="border-2 border-zinc-600 py-5 w-1/4 text-6xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer"
+            >
+              <i class="ri-divide-line"></i>
+            </button>
+          </div>
+          <div class="w-full mt-4 flex gap-3">
+            <button
+            id="equal"
+              class="border-2 border-zinc-600 py-5 w-3/4 text-6xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer"
+            >
+              <i class="ri-equal-line"></i>
+            </button>
+            <button id="enterBtn" class="border-2 border-zinc-600 py-5 w-1/4 text-5xl rounded-2xl text-zinc-400 hover:bg-zinc-800 cursor-pointer">
+              Enter
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
