@@ -3,6 +3,7 @@ const minus = document.querySelector("#minus")
 const multiply = document.querySelector("#multiply")
 const divide = document.querySelector("#divide")
 const equal = document.querySelector("#equal")
+const clear = document.querySelector("#clear")
 const takeInp = document.querySelector("#inpBox")
 const enterBtn = document.querySelector("#enterBtn")
 
@@ -52,3 +53,7 @@ divide.addEventListener("click", () => {
     })
 })
 
+clear.addEventListener("click",()=>{
+    num1=0
+    num2=0
+})
