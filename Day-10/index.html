@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: gilroy;
+            src: url("./Gilroy-Regular.ttf");
+        }
+
+        *::selection {
+            color: wheat;
+            background: transparent;
+        }
+    </style>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div
+        class="font-[gilroy] font-semibold tracking-tight main h-screen w-full bg-zinc-900 flex items-center justify-center text-white flex-col">
+        <h1 class="text-4xl">Enter you birth year <span><input class="border-b-4 outline-none text-center w-40 pb-1"
+                    type="text" name="birthYear" id="getYear"></span> and this is your current age <span><input
+                    class="border-b-4 outline-none text-center w-40 pb-1" type="text" name="currentAge" id="displayAge"
+                    readonly></span>.</h1>
+    </div>
+    <script>
+        const getYear = document.querySelector("#getYear");
+        const displayAge = document.querySelector("#displayAge");
+        const currentYear = new Date().getFullYear()
+        console.log(currentYear)
+        let userBirthYear;
+        getYear.addEventListener("input", (e) => {
+            if (e.target.value.length === 4) {
+                userBirthYear = e.target.value
+                displayAge.value = Number(currentYear - userBirthYear);
+            }
+        })
+    </script>
+</body>
+
+</html>
