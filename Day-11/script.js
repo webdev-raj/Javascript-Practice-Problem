@@ -13,7 +13,10 @@ startBtn.addEventListener("click",()=>{
     finalNum.textContent = range
 
     submitBtn.addEventListener("click",()=>{
-        randomGuess=Number(userInput.value)
+        if (userInput.value==="") {
+            alert("please fill the input to enter your chooice")
+        }
+        randomGuess=Number(userInput.value);
         userInput.value=""
         if (randomGuess === guessingNumber) {
             messageBox.textContent = "your guess is correct"
@@ -22,7 +25,7 @@ startBtn.addEventListener("click",()=>{
         else if(randomGuess>guessingNumber){
             messageBox.textContent="your guess greater number then guessed number"
         }
-        else if(randomGuess<guessingNumber){
+        else{
             messageBox.textContent = "your guess is less then guessed number"
         }
     })
