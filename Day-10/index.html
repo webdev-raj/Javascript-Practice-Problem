@@ -7,9 +7,11 @@
     <style>
         @font-face {
             font-family: gilroy;
-            src: url("./Gilroy-Regular.ttf");
+            src: url("");
         }
-
+        *{
+            font-family: gilroy;
+        }
         *::selection {
             color: wheat;
             background: transparent;
@@ -31,7 +33,6 @@
         const getYear = document.querySelector("#getYear");
         const displayAge = document.querySelector("#displayAge");
         const currentYear = new Date().getFullYear()
-        console.log(currentYear)
         let userBirthYear;
         getYear.addEventListener("input", (e) => {
             if (e.target.value.length === 4) {
