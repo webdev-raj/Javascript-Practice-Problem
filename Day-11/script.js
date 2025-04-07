@@ -7,6 +7,7 @@ let guessHistory = document.querySelector("#guessHistory")
 let guessingNumber = 0
 let randomGuess = 0
 startBtn.addEventListener("click",()=>{
+    messageBox.textContent = "start to guessing number"
     let range = Math.floor(Math.random()*100)
     guessingNumber = Math.floor(Math.random()*range)
     console.log(guessingNumber)
