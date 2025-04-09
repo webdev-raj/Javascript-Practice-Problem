@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("./Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="h-screen w-full bg-zinc-900 text-white flex items-center justify-center flex-col gap-3">
+        <h1 class="text-4xl">Fizz Buzz FizzBuzz</h1>
+        <button id="startbtn"
+            class="px-6 py-2 text-xl bg-zinc-100 text-black border-2 border-zinc-500 outline-none rounded-full">Start</button>
+    </div>
+    <script>
+        let btn = document.querySelector("#startbtn")
+        btn.addEventListener("click", () => {
+            for (let i = 1; i <= 100; i++) {
+                console.log("iteration : ", i);
+
+                if (i % 3 == 0 && i % 5 == 0) {
+                    console.log("FizzBuzz");
+                }
+                else if (i % 5 == 0) {
+                    console.log("Buzz");
+                }
+                else if(i % 3 == 0) {
+                    console.log("Fizz");
+                }
+                else {
+                    console.log("the Number are not able to be a fizzbuzz are",i);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
