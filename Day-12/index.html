@@ -20,25 +20,41 @@
 </head>
 
 <body>
-    <div class="h-screen w-full bg-zinc-900 text-white flex items-center justify-center flex-col gap-3">
-        <h1 class="text-4xl">Fizz Buzz FizzBuzz</h1>
-        <button id="startbtn"
-            class="px-6 py-2 text-xl bg-zinc-100 text-black border-2 border-zinc-500 outline-none rounded-full">Start</button>
+    <div class="min-h-screen pt-20 w-full bg-zinc-900 text-white flex items-center justify-center flex-col p-10">
+        <h1 class="text-4xl">Fizz Buzz & FizzBuzz</h1>
+        <p class="text-zinc-300 my-3 text-lg w-1/2 leading-none text-center">it just a game that check a number if the number <br> is fizz, buzz & fizzbuzz</p>
+        <div class="flex items-center justify-center gap-2 mt-2">
+            <button id="startBtn"
+                class="cursor-pointer px-6 py-2 text-xl bg-zinc-100 text-black border-2 border-zinc-500 outline-none rounded-full">Start</button>
+            <button id="resetBtn"
+                class="cursor-pointer px-6 py-2 text-xl bg-zinc-100 text-black border-2 border-zinc-500 outline-none rounded-full">Reset</button>
+        </div>
+        <div id="output" class="mt-10"></div>
     </div>
     <script>
-        let btn = document.querySelector("#startbtn")
+        let btn = document.querySelector("#startBtn")
+        let Resetbtn = document.querySelector("#resetBtn")
+        let output = document.querySelector("#output")
+        let temp = "FizzBuzz"
+        let temp2 = "Buzz"
+        let temp3 = "Fizz"
         btn.addEventListener("click", () => {
             for (let i = 1; i <= 100; i++) {
-                console.log("iteration : ", i);
-
+                // console.log("iteration : ", i);
                 if (i % 3 == 0 && i % 5 == 0) {
-                    console.log("FizzBuzz");
+                    let h1text = document.createElement("h1")
+                    h1text.innerHTML = `<span class="text-blue-500">${temp}</span> ${i}`
+                    output.appendChild(h1text)
                 }
                 else if (i % 5 == 0) {
-                    console.log("Buzz");
+                    let h1text = document.createElement("h1")
+                    h1text.innerHTML = `<span class="text-red-500">${temp2}</span> ${i}`
+                    output.appendChild(h1text)
                 }
                 else if(i % 3 == 0) {
-                    console.log("Fizz");
+                    let h1text = document.createElement("h1")
+                    h1text.innerHTML = `<span class="text-green-500">${temp3}</span> ${i}`
+                    output.appendChild(h1text)
                 }
                 else {
                     console.log("the Number are not able to be a fizzbuzz are",i);
