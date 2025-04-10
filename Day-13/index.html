@@ -21,29 +21,67 @@
 
 <body>
     <div class="h-screen w-full bg-zinc-900 text-white flex items-center justify-center">
-        <div class="temperatureContainer min-h-40 bg-zinc-800 w-2/5 rounded-2xl flex items-center justify-between flex-col p-5 gap-4">
+        <div
+            class="temperatureContainer min-h-40 bg-zinc-800 w-2/4 rounded-2xl flex items-center justify-between flex-col p-5 gap-4">
             <div class="flex items-end justify-between w-full gap-3">
                 <div class="w-full">
                     <h4>degree</h4>
-                    <input type="text" name="" id="" class="border-2 w-full mt-1 px-1 py-0.5 rounded-lg" placeholder="enter a current calsius degree">
+                    <input type="text" name="" id="" class="border-2 w-full mt-1 px-2 py-1 rounded-lg"
+                        placeholder="enter a current calsius degree">
                 </div>
                 <div class="w-full">
                     <h4>Type</h4>
-                    <select name="temperatureDetail" class="w-full border-2 mt-1 px-1 py-1 rounded-lg">
+                    <select name="temperatureDetail" id="selectContainer"
+                        class="w-full border-2 mt-1 px-1 py-1.5 rounded-lg">
+                        <option value="default" class="text-black">Select Your Option</option>
                         <option value="ctof" class="text-black">Calsius To Fahrenheit</option>
                         <option value="ftoc" class="text-black">Fahrenheit to Calsius</option>
                     </select>
                 </div>
-                <button class="w-[33%] border-2 py-2 px-5 rounded-lg">Convert</button>
+                <button id="convertBtn" class="w-[33%] border-2 py-2 px-5 rounded-lg">Convert</button>
             </div>
             <div class="w-full">
                 <h4>Result</h4>
                 <div class="border-2 rounded-lg w-full h-10 flex items-center px-2">
-                    <h1>No Result is Calculated</h1>
+                    <h1 id="ans"></h1>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let btn = document.querySelector("#convertBtn")
+        let inputBox = document.querySelector("input[type='text']")
+        let selectContainer = document.querySelector("#selectContainer")
+        let ansdisplay = document.querySelector("#ans")
+        let cal = 0
+        let fahr = 0
+        ansdisplay.textContent = "No Result is Calculated"
+        btn.addEventListener("click", () => {
+            let output = selectContainer.options[selectContainer.selectedIndex].value
+            if (output == "default") {
+                alert("please Select your option")
+                ansdisplay.textContent = "No Result is Calculated"
+            }
+            else if (output == "ctof") {
+                ctof(inputBox.value)
+            }
+            else if (output == "ftoc") {
+                ftoc(inputBox.value)
+            }
+            else {
+                return 0;
+            }
+        })
+        function ctof(c) {
+            fahr = (c * 1.8) + 32
+            ansdisplay.textContent = fahr
+        }
+        function ftoc(f) {
+            cal = (f - 32) / 1.8
+            ansdisplay.textContent = cal
+        }
+    </script>
 </body>
 
 </html>
