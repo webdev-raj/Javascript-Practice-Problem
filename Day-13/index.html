@@ -20,7 +20,30 @@
 </head>
 
 <body>
-
+    <div class="h-screen w-full bg-zinc-900 text-white flex items-center justify-center">
+        <div class="temperatureContainer min-h-40 bg-zinc-800 w-2/5 rounded-2xl flex items-center justify-between flex-col p-5 gap-4">
+            <div class="flex items-end justify-between w-full gap-3">
+                <div class="w-full">
+                    <h4>degree</h4>
+                    <input type="text" name="" id="" class="border-2 w-full mt-1 px-1 py-0.5 rounded-lg" placeholder="enter a current calsius degree">
+                </div>
+                <div class="w-full">
+                    <h4>Type</h4>
+                    <select name="temperatureDetail" class="w-full border-2 mt-1 px-1 py-1 rounded-lg">
+                        <option value="ctof" class="text-black">Calsius To Fahrenheit</option>
+                        <option value="ftoc" class="text-black">Fahrenheit to Calsius</option>
+                    </select>
+                </div>
+                <button class="w-[33%] border-2 py-2 px-5 rounded-lg">Convert</button>
+            </div>
+            <div class="w-full">
+                <h4>Result</h4>
+                <div class="border-2 rounded-lg w-full h-10 flex items-center px-2">
+                    <h1>No Result is Calculated</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
