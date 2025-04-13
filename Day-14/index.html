@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("./Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+
+        input[type=checkbox] {
+            -ms-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            transform: scale(1.5);
+            padding: 10px;
+            accent-color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main h-screen w-full bg-zinc-900 text-white flex items-center justify-center">
+        <div class="min-h-80 w-3/12 bg-zinc-800 rounded-2xl border p-6">
+            <h1 class="text-2xl tracking-tight mb-3">To-Do List 📃</h1>
+            <div
+                class="border border-zinc-500 flex items-center justify-between rounded-full bg-zinc-800 overflow-hidden">
+                <input type="text" placeholder="add your task" id=""
+                    class="border-none text-lg pl-3 bg-zinc-800 outline-none">
+                <button id="add" class="text-lg rounded-full px-3 py-2 bg-red-600 cursor-pointer">Add Task</button>
+            </div>
+            <div id="taskContainer" class="w-full h-full flex flex-col items-center gap-3 mt-2">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let inputtext = document.querySelector("input[type='text']");
+        let addtextbtn = document.querySelector("#add")
+        let taskContainer = document.querySelector("#taskContainer");
+        let testArray = [];
+        addtextbtn.addEventListener("click", () => {
+            if (inputtext.value == "") {
+                alert("please make sure you fill the input")
+            }
+            else {
+                testArray.push(inputtext.value)
+                taskContainer.innerHTML = ""
+                addingElem()
+            }
+        })
+
+        const addingElem = () => {
+            for (let i = 0; i < testArray.length; i++) {
+                taskContainer.innerHTML += `<div id="task" class="w-full flex items-center justify-between border-b px-1 py-2">
+                    <div id="Hero" class="flex items-center gap-3">
+                        <input class="chackbox" type="checkbox" data-id="${i}">
+                        <h1 id="taskheading" class="text-xl text-zinc-300">${testArray[i]}</h1>
+                    </div>
+                    <button class="delete p-1 bg-teal-500"><span class=""><i class=" text-2xl ri-close-large-line"></i></span></button>
+                </div>`
+            }
+            inputtext.value = ""
+            let checkevent = document.querySelectorAll("#check")
+            taskContainer.addEventListener("change", (e) => {
+                if (e.target.classList.contains("chackbox")) {
+                    let taskDiv = e.target.closest("#Hero")
+                    let h1text = taskDiv.querySelector("h1")
+                    if (e.target.checked) {
+                        h1text.classList.add("line-through")
+                        h1text.classList.add("opacity-75")
+                    }
+                    else {
+                        h1text.classList.remove("line-through")
+                        h1text.classList.remove("opacity-75")
+                    }
+                }
+            })
+        }
+        taskContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("delete")) {
+                e.target.parentElement.remove()
+            }
+        })
+    </script>
+</body>
+
+</html>
