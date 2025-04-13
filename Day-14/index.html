@@ -63,20 +63,20 @@
 
         const addingElem = () => {
             for (let i = 0; i < testArray.length; i++) {
-                taskContainer.innerHTML += `<div id="task" class="w-full flex items-center justify-between border-b px-1 py-2">
-                    <div id="Hero" class="flex items-center gap-3">
+                taskContainer.innerHTML += `<div class="task w-full flex items-center justify-between border-b px-1 py-2">
+                    <div class="Hero flex items-center gap-3">
                         <input class="chackbox" type="checkbox" data-id="${i}">
-                        <h1 id="taskheading" class="text-xl text-zinc-300">${testArray[i]}</h1>
+                        <h1 class="taskheading text-xl text-zinc-300">${testArray[i]}</h1>
                     </div>
-                    <button class="delete p-1 bg-teal-500"><span class=""><i class=" text-2xl ri-close-large-line"></i></span></button>
+                    <button data-id="${i}" class="delete p-1 bg-teal-500"><span class=""><i class=" text-2xl ri-close-large-line"></i></span></button>
                 </div>`
             }
             inputtext.value = ""
             let checkevent = document.querySelectorAll("#check")
             taskContainer.addEventListener("change", (e) => {
                 if (e.target.classList.contains("chackbox")) {
-                    let taskDiv = e.target.closest("#Hero")
-                    let h1text = taskDiv.querySelector("h1")
+                    let taskDiv = e.target.closest(".Hero")
+                    let h1text = taskDiv.querySelector(".taskheading")
                     if (e.target.checked) {
                         h1text.classList.add("line-through")
                         h1text.classList.add("opacity-75")
@@ -89,8 +89,18 @@
             })
         }
         taskContainer.addEventListener("click", (e) => {
-            if (e.target.classList.contains("delete")) {
-                e.target.parentElement.remove()
+            if (e.target.classList.contains("delete") || e.target.closest("delete")) {
+                let deleteBtn = e.target
+                let taskDiv = deleteBtn.closest(".task")
+                let checkbox = taskDiv.querySelector(".chackbox")
+                let dataid = deleteBtn.getAttribute("data-id")
+                if (checkbox.checked) {
+                    testArray.splice(dataid,1)
+                    taskContainer.innerHTML = ""
+                    addingElem()
+                }else{
+                    alert("before deleting the task please check the checkbox")
+                }
             }
         })
     </script>
