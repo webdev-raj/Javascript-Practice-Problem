@@ -20,7 +20,7 @@ const addingElem = () => {
                         <input class="chackbox" type="checkbox" data-id="${i}">
                         <h1 class="taskheading text-xl text-zinc-300">${testArray[i]}</h1>
                     </div>
-                    <button data-id="${i}" class="delete p-1 bg-teal-500"><span class=""><i class=" text-2xl ri-close-large-line"></i></span></button>
+                    <button data-id="${i}" class="delete p-1"><span><i class="text-xl ri-close-large-line"></i></span></button>
                 </div>`
     }
     inputtext.value = ""
