@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style>
-         @font-face {
+        @font-face {
             font-family: gil;
             src: url("./Gilroy-Regular.ttf");
         }
@@ -13,10 +17,94 @@
             font-family: gil;
             font-weight: bold;
         }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
     </style>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="main min-h-screen w-full mx-auto bg-zinc-900 text-white">
+        <div class="navbar w-full flex items-center justify-around py-6">
+            <h1 class="text-4xl">Product List</h1>
+            <div class="relative flex items-center justify-center">
+                <i class="text-3xl text-zinc-200 ri-shopping-cart-2-fill"></i>
+                <div
+                    class="absolute -bottom-1 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center">
+                    <h1 class="text-zinc-100">0</h1>
+                </div>
+            </div>
+        </div>
+        <div id="productsContainer" class="w-4/6 mx-auto flex flex-wrap align-start justify-center gap-4 py-8">
+            <!-- <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/1.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div> -->
+            <!-- <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/2.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/3.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/4.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/5.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/6.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/7.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div>
+            <div class="h-96 w-64 rounded-xl bg-zinc-800 flex flex-col items-center justify-between p-4">
+                <div class="w-full h-52 bg-black rounded-xl"><img src="./image/8.png"
+                        class="h-full w-full object-contain"></div>
+
+                <h1 class="text-center text-2xl capitalize leading-none">LD01 Lounge chair</h1>
+                <p class="text-zinc-300">$200</p>
+                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>
+            </div> -->
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
