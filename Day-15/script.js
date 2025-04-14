@@ -47,6 +47,6 @@ products.map(product => {
 
                 <h1 class="text-center text-2xl capitalize leading-none">${product.chairName}</h1>
                 <p class="text-zinc-300"><span>$</span>${product.price}</p>
-                <button class="px-3 py-2 border rounded-md border-white">Add to Cart</button>`
+                <button class="px-3 py-2 border cursor-pointer rounded-md border-white">Add to Cart</button>`
     productContainer.appendChild(cards)
 })
