@@ -32,7 +32,7 @@
 
 ---
 
-## 4. JavaScript Objects & OOP
+## 4. JavaScript Objects & OOP (i will complete this after completing all)
 
 - **Book Library System**  
   Create a `Book` class with properties like title, author, and genre. Allow users to add and remove books.
