@@ -49,7 +49,6 @@
 
 - **Contact List**  
   Store contacts in an array and allow users to search, add, and remove contacts.
-
 ---
 
 ## 6. JavaScript Strings & String Methods
