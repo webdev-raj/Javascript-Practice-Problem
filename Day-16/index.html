@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("./Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="h-screen w-full bg-zinc-900 text-white flex items-center justify-center">
+        <div id="contactaddingContainer" class="w-1/2 h-full flex items-center justify-center flex-col bg-zinc-900">
+            <h1 class="mb-3 text-3xl">Contact List</h1>
+            <div
+                class="contactContainer p-3 border rounded-xl border-zinc-600 w-4/5 flex items-center flex-col justify-center">
+                <div class="getData flex flex-col justify-center items-center w-full">
+                    <input type="text" id="nameInput" class="w-full border px-2 py-3 rounded-xl"
+                        placeholder="Enter name" />
+                    <input type="text" id="phoneInput" class="mt-2 w-full border px-2 py-3 rounded-xl"
+                        placeholder="Enter phone number" />
+                    <button class="mt-5 cursor-pointer py-2 rounded-xl text-xl border w-full" id="addButtom">Add Contact</button>
+                </div>
+            </div>
+        </div>
+        <div id="right" class="hidden w-1/2 h-full bg-zinc-950 p-3 flex-col items-center justify-start rounded-xl gap-3">
+            <div class="border p-2 w-4/5 flex items-center gap-2 rounded-md mt-10">
+                <input id="Search" type="text" placeholder="Search Here..." class="border rounded-md text-xl w-full px-2 py-1.5">
+            </div>
+            <div id="contactList" class="gap-3 flex flex-col items-start w-full h-[90%] overflow-y-scroll p-2">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
