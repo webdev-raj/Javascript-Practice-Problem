@@ -145,5 +145,3 @@
   Use `map()`, `filter()`, `reduce()`, and spread/rest operators.
 
 ---
-
-If you'd like, I can also generate this as a downloadable `.md` file so you can track it in Notion, GitHub, or any Markdown editor. Want that too?
