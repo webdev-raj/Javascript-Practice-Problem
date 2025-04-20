@@ -100,6 +100,7 @@ const searchContact = () => {
                 </div>`
         })
         contactListContainer.innerHTML = newClutter
+        deleteContact()
     }
 }
 searchContact()
