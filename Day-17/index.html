@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @font-face {
+      font-family: gil;
+      src: url("./Gilroy-Regular.ttf");
+    }
+
+    body {
+      font-family: gil;
+      font-weight: bold;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="min-h-screen w-full bg-zinc-900 text-white flex items-center flex-col gap-3 justify-center">
+    <h1 class="text-4xl tracking-tight">Check Your Password Strength.</h1>
+    <div class="min-h-28 w-2/3 bg-zinc-800 rounded-md p-4 flex flex-col items-center justify-between gap-3">
+      <div class="flex items-center w-full gap-2">
+        <input type="password" name="password" id="password" placeholder="enter your password"
+          class="border-2 rounded-md w-3/4 p-2 text-xl outline-none">
+        <button id="copyText" class="py-2 border-2 rounded-md px-1 w-1/4 text-xl cursor-pointer">Copy Your
+          Password</button>
+      </div>
+      <div class="progessBar h-3 w-full border rounded-full overflow-hidden">
+        <div class="progress h-full w-[0] bg-red-600 rounded-full"></div>
+      </div>
+      <!-- <h1>what you are typing see here :- <span class="realtimePassword"></span></h1> -->
+      <h1 class="text-xl capitalize">difficulty level & Suggestion: <span id="messageContainer" class="text-red-600"></span>
+      </h1>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
