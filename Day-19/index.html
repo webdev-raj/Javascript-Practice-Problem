@@ -18,6 +18,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="select-none h-screen tracking-tighter w-full bg-zinc-950 text-white flex items-center justify-center flex-col">
+        <h1 class="text-4xl mb-3 capitalize">Counter Timer</h1>
+        <div class="min-h-52 w-1/2 bg-zinc-900 border border-zinc-600 rounded-xl flex items-center justify-evenly">
+            <div class="border border-zinc-600 min-h-40 w-28 px-20 flex items-center justify-around rounded-lg flex-col bg-zinc-950">
+                <div class="pt-6 h-[90%]"><h1 id="dayChanging" class="text-8xl">00</h1></div>
+                <div class="py-3 h-[10%]"><h1 class="text-xl">Days</h1></div>
+            </div>
+            <div class="border border-zinc-600 min-h-40 w-28 px-20 flex items-center justify-around rounded-lg flex-col bg-zinc-950">
+                <div class=" pt-6 h-[90%]"><h1 id="hoursChanging" class="text-8xl">00</h1></div>
+                <div class="py-3 h-[10%]"><h1 class="text-xl">Hours</h1></div>
+            </div>
+            <div class="border border-zinc-600 min-h-40 w-28 px-20 flex items-center justify-around rounded-lg flex-col bg-zinc-950">
+                <div class=" pt-6 h-[90%]"><h1 id="minsChanging" class="text-8xl">00</h1></div>
+                <div class="py-3 h-[10%]"><h1 class="text-xl">Mins</h1></div>
+            </div>
+            <div class="border border-zinc-600 min-h-40 w-28 px-20 flex items-center justify-around rounded-lg flex-col bg-zinc-950">
+                <div class=" pt-6 h-[90%]"><h1 id="secondsChanging" class="text-8xl">00</h1></div>
+                <div class="py-3 h-[10%]"><h1 class="text-xl">Secs</h1></div>
+            </div>
+        </div>
+        <div class="w-1/2 bg-zinc-900 h-15 border border-zinc-600 flex items-center justify-between px-3 mt-4 rounded-xl">
+            <div class="bg-zinc-100 tracking-wider px-3 py-1 border rounded-lg">
+                <input id="getDate" type="date" class="text-black">
+            </div>
+            <button id="btn" class="px-4 py-2 cursor-pointer bg-zinc-800 tracking-tight active:scale-95 duration-150 ease-out rounded-xl border border-zinc-500 ">Start Counter</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
