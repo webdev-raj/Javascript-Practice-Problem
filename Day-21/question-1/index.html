@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("/Day-21/Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+            transition: 0.5s ease-in-out;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #FFFFFF;
+            border-radius: 34px;
+            transition: 0.5s ease-in-out;
+            border: 2px solid rgb(117, 117, 117);
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            left: 5px;
+            bottom: 4px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            transition: 0.5s ease-in-out;
+        }
+
+        input:checked+.slider {
+            background-color: #000000;
+        }
+
+        input:checked+.slider::before {
+            background-color: #ffffff;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(48px);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="bg" class="h-screen w-full bg-[#FFFFFF] text-black flex items-center justify-center flex-col gap-3">
+        <h1 id="textchanger" class="text-5xl tracking-tighter">Oi! Turn off the damn light!</h1>
+        <div class="h-96 w-96">
+            <img class="h-full w-full object-cover" src="https://i.pinimg.com/736x/b5/ae/52/b5ae522203ae642a276a5db3e112c069.jpg" id="imagechanger">
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <script>
+        const imageSrc = "https://i.pinimg.com/736x/02/4d/1d/024d1d1651e6e9523fcbf813d12881e4.jpg"
+        const toggle = document.querySelector("#toggle")
+        const imagechanger = document.querySelector("#imagechanger");
+        const textchanger = document.querySelector("#textchanger");
+        const bg = document.querySelector("#bg")
+        let fleg = true 
+        toggle.addEventListener("change",()=>{
+            if(toggle.checked && fleg){
+                bg.classList.replace("bg-[#FFFFFF]","bg-zinc-950")
+                bg.classList.replace("text-black","text-white")
+                imagechanger.setAttribute("src",imageSrc)
+                textchanger.textContent = "Lights out... your nightmares begin!"
+                fleg=false
+            }else{
+                bg.classList.replace("bg-zinc-950","bg-[#FFFFFF]")
+                bg.classList.replace("text-white","text-black")
+                imagechanger.setAttribute("src","https://i.pinimg.com/736x/b5/ae/52/b5ae522203ae642a276a5db3e112c069.jpg")
+                textchanger.textContent = "Oi! Turn off the damn light!"
+                fleg=true
+            }
+        })
+    </script>
+</body>
+
+</html>
