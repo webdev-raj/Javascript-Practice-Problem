@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("/Day-21/Gilroy-Regular.ttf");
+        }
+        body{
+            font-family: gil;
+            font-weight: bolder;
+            background-color: #202020b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="select-none h-screen w-full bg-zinc-950 text-white flex items-center justify-center gap-3">
+        <div class="flex items-center justify-center w-full gap-3">
+            <div id="previous" class="h-10 w-10 cursor-pointer rounded-full flex items-center justify-center">
+                <i class="ri-arrow-left-wide-line text-5xl"></i>
+            </div>
+            <div class="imagesPreviewer h-96 w-1/2 bg-zinc-900 border-2 border-zinc-800 rounded-xl p-2 relative overflow-hidden">
+            </div>
+            <div id="next" class="h-10 w-10 cursor-pointer rounded-full flex items-center justify-center">
+                <i class="ri-arrow-right-wide-line text-5xl"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
