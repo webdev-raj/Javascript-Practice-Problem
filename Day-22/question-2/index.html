@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("/Day-21/Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="h-screen w-full bg-zinc-950 text-white flex items-center justify-center">
+        <div id="clock"
+            class="h-28 w-[30%] bg-zinc-900 rounded-xl p-3 flex items-center justify-center border-2 border-zinc-700 ">
+        </div>
+    </div>
+
+    <script>
+        let clock = document.querySelector("#clock")
+        let updateTime = () => {
+            let currenttime = new Date()
+            let hr = currenttime.getHours()
+            let min = currenttime.getMinutes()
+            let sec = currenttime.getSeconds()
+
+            let hour = hr < 10 ? "0" + hr : hr
+            let minutes = min < 10 ? "0" + min : min
+            let second = sec < 10 ? "0" + sec : sec
+
+
+
+            clock.innerHTML = `<h1 class="select-none text-7xl"><span id="hr">${hour}</span>:<span id="min">${minutes}</span>:<span
+                    id="sec">${second}</span> <span id="changer">${hour>=12?"PM":"AM"}</span></h1>`
+
+        }
+        setInterval(updateTime, 1000)
+    </script>
+</body>
+
+</html>
