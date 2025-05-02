@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("./Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+    </style>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="h-screen w-full bg-zinc-950 text-white flex items-center justify-center select-none">
+        <div
+            class="w-[23%] min-h-96 bg-zinc-900 rounded-xl p-4 flex items-start justify-start flex-col shadow-[0px_0px_9px_4px_#1a202c]">
+            <div class="w-full flex items-center justify-center gap-2">
+                <input type="text" placeholder="Search here..."
+                    class="capitalize py-2 px-3 text-lg border border-zinc-600 rounded-lg w-[85%] outline-none placeholder:text-zinc-500" />
+                <button id="btn" class="w-[15%] text-lg py-2 border border-zinc-600 rounded-lg cursor-pointer">
+                    <i class="ri-search-line"></i>
+                </button>
+            </div>
+            <div class="flex items-center justify-center w-full flex-col">
+                <div class="h-52 w-52">
+                    <img id="weatherImg" class="h-full w-full object-cover object-center"
+                        src="" alt="weather" />
+                </div>
+                <h4 id="shyDetails" class="text-lg text-zinc-300 capitalize"></h4>
+                <h1 class="text-4xl"><span id="degree"></span>°C</h1>
+                <h3 id="location" class="text-lg text-zinc-300"></h3>
+            </div>
+            <div class="w-full flex items-center justify-center mt-5">
+                <div class="w-1/2 flex items-center flex-col justify-center">
+                    <div class="flex items-center gap-0.5 justify-center">
+                        <i class="ri-temp-hot-line text-3xl"></i>
+                        <h1 class="text-xl"><span id="humidity"></span>%</h1>
+                    </div>
+                    <h1 class="text-lg">Humidity</h1>
+                </div>
+                <div class="w-1/2 flex items-center flex-col justify-center">
+                    <div class="flex items-center gap-0.5 justify-center">
+                        <i class="ri-windy-line text-3xl"></i>
+                        <h1 class="text-xl"><span id="windspeed"></span>Km/H</h1>
+                    </div>
+                    <h1 class="text-lg">Wind Speed</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
