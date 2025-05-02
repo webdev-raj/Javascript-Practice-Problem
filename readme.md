@@ -145,3 +145,34 @@
   Use `map()`, `filter()`, `reduce()`, and spread/rest operators.
 
 ---
+
+___________________________________________________________________________________________________________________
+
+
+<!-- # AI JavaScript Code Formatter 🧠✨
+
+This is a web-based AI tool that formats messy JavaScript code into clean, readable code using popular style guides like **Airbnb**, **Google**, or **StandardJS**.
+
+## 🔧 Features
+- Paste raw JavaScript code
+- Select a code style (Airbnb / Google / StandardJS)
+- AI formats the code instantly using OpenAI
+- Copy formatted code with one click
+
+## 📦 Tech Stack
+- HTML, CSS, JavaScript
+- Tailwind CSS (via CDN)
+- OpenAI API
+- Clipboard API
+
+## 🚀 How It Works
+1. User pastes raw JS code
+2. Selects a style (e.g., Airbnb)
+3. AI reformats it based on selected style
+4. Output is shown in a formatted box with copy option
+
+## 📌 Project Status
+Still in development — style options and OpenAI integration working.
+
+---
+ -->
