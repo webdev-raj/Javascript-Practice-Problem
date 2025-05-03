@@ -11,7 +11,7 @@ const fetchDataFromServer = ()=>{
         document.querySelector("#humidity").textContent = data.main.humidity    
         document.querySelector("#windspeed").textContent = data.wind.speed
         temp =data.main.temp - 273.15
-        document.querySelector("#degree").textContent = temp.toFixed(2)
+        document.querySelector("#degree").textContent = temp.toFixed(1)
     }).catch(function(error){
         console.log("not able to get response from server",error)
     })
