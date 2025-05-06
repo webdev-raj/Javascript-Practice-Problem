@@ -96,10 +96,10 @@
 - **Weather App**  
   Fetch weather data using the OpenWeather API.
 
-- **News Aggregator**  
-  Fetch latest news articles using an API.
+  - **News Aggregator**  
+    Fetch latest news articles using an API.
 
----
+  ---
 
 ## 11. JavaScript Error Handling
 

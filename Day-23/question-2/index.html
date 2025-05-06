@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: gil;
+            src: url("/Day-23/Gilroy-Regular.ttf");
+        }
+
+        body {
+            font-family: gil;
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="min-h-screen w-full bg-[#121212] text-white select-none">
+        <div class="fixed top-0 left-0 w-full flex items-center justify-between py-5 px-10 border-b border-zinc-600 bg-zinc-900/80">
+            <h1 class="text-3xl">Daily News</h1>
+            <div class="w-2/6 flex items-center gap-2">
+                <input type="text" placeholder="e.g. Science"
+                    class="px-2 py-1 w-4/5 border rounded-lg outline-none text-lg capitalize placeholder:lowercase" id="searchbox">
+                <button class="px-4 py-1 rounded-lg border text-lg cursor-pointer" id="btn">Search</button>
+            </div>
+        </div>
+        <div id="newContainer" class="pt-30 py-8 px-8 flex items-start justify-center flex-wrap gap-5 min-h-screen w-full">
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
